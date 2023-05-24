@@ -1,0 +1,15 @@
+{% extends 'bank_management/base.html' %}
+
+{% block content %}
+<h2>How much amount would like to deposit ?</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="deposit_amount">
+    <button type="submit">Valid</button>
+</form>
+{% if deposit_amount %}
+<p>Ok, {{ deposit_amount }}$ is deposit. Current balance is {{ balance }}$</p>
+{% endif %}
+<a href="/bank_management">Back to the menu</a>
+
+{% endblock %}

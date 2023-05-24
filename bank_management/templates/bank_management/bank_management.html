@@ -1,0 +1,14 @@
+{% extends 'bank_management/base.html' %}
+
+{% block content %}
+<h2>What else would you like today ?</h2>
+<ul style="display: flex;flex-direction: column;">
+    <a href="bank_management/deposit">Deposit</a>
+    <a href="bank_management/withdraw">Withdraw</a>
+    <a href="bank_management/balance">Balance check</a>
+    <a href="bank_management/details">Modify account details</a>
+    <a href="bank_management/delete">Delete account</a>
+    <a href="/bank_management/logout">Logout</a>
+</ul>
+
+{% endblock %}

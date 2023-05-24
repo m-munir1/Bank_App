@@ -1,0 +1,27 @@
+{% extends 'bank_management/base.html' %}
+
+{% block content %}
+<h1>Welcome to Bank App</h1>
+<form method="post">
+  {% csrf_token %}
+  <p>Do you have account with bank ?</p>
+  <div>
+    <input type="radio" name="have_account" id="have_account_y" value="y">
+    <label for="account_y">Y</label>
+    <input type="radio" name="have_account" id="have_account_n" value="n">
+    <label for="account_n">N</label>
+    <button type="submit" name="have_account_submit">Valid</button>
+  </div>
+  {% if exception %}
+  <div style="color: red">{{ exception }}</div>
+  {% endif %}
+  <div>
+    <label for="">Enter name</label>
+    <<input type="text" name="username" value="{{ user.username }}">
+  </div>
+</div>
+</form>
+{% if have_account %}
+<a href="/bank_management">click here to do more stuff</a>
+{% endif %}
+{% endblock %}

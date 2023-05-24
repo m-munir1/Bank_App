@@ -1,0 +1,15 @@
+{% extends 'bank_management/base.html' %}
+
+{% block content %}
+<h2>How much amount would like to withdraw ?</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="number" name="withdraw_amount">
+    <button type="submit">Valid</button>
+</form>
+{% if withdraw_amount %}
+<p>Ok, {{ withdraw_amount }}$ is withdrawed. Current balance is {{ balance }}$</p>
+{% endif %}
+<a href="/bank_management">Back to the menu</a>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'bank_management/base.html' %}
+
+{% block content %}
+<h2>Modify Details Account</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" name="username" id="" value="{{ user.username }}">
+    {% if message %}
+    <p style="color: green">Username have been changed successfully</p>
+    {% endif %}
+    <button type="submit">Valid</button>
+</form>
+<a href="/bank_management">Back to the menu</a>
+
+{% endblock %}
